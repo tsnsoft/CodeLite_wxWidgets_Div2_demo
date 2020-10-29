@@ -11,8 +11,8 @@
 
 ![srcreenshot](screenshot5.png)
 
+## main.h:
 ```
-
 class MainFrame : public MainFrameBase
 {
 public:
@@ -27,6 +27,7 @@ protected:
 };
 ```
 
+## main.cpp или в любом своем файле *.cpp:
 
 ```
 // ЭТО РЕАЛИЗАЦИЯ НАШЕГО МЕТОДА!
