@@ -6,14 +6,14 @@
 ProjectName            :=CodeLite_wxWidgets_Div2_demo
 ConfigurationName      :=Debug
 WorkspacePath          :=/home/tsn/Moe/Projects/CodeLiteProjects
-ProjectPath            :=/home/tsn/Moe/Projects/CodeLiteProjects/CodeLite_wxWidgets_Div2_demo
+ProjectPath            :=/home/tsn/Moe/Projects/CodeLiteProjects/CodeLite_wxWidgets_Div2_demo-main
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=tsn
-Date                   :=10/29/20
+Date                   :=09.11.2020
 CodeLitePath           :=/home/tsn/.codelite
 LinkerName             :=g++
 SharedObjectLinkerName :=g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/controls.cpp$(ObjectSuffix) $(IntermediateDirectory)/gui.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/gui.cpp$(ObjectSuffix) $(IntermediateDirectory)/controls.cpp$(ObjectSuffix) 
 
 
 
@@ -91,23 +91,29 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/controls.cpp$(ObjectSuffix): controls.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/controls.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/controls.cpp$(DependSuffix) -MM controls.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/tsn/Moe/Projects/CodeLiteProjects/CodeLite_wxWidgets_Div2_demo/controls.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/controls.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/controls.cpp$(PreprocessSuffix): controls.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/controls.cpp$(PreprocessSuffix) controls.cpp
+$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/tsn/Moe/Projects/CodeLiteProjects/CodeLite_wxWidgets_Div2_demo-main/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
-$(IntermediateDirectory)/gui.cpp$(ObjectSuffix): gui.cpp
+$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+
+$(IntermediateDirectory)/gui.cpp$(ObjectSuffix): gui.cpp $(IntermediateDirectory)/gui.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/tsn/Moe/Projects/CodeLiteProjects/CodeLite_wxWidgets_Div2_demo-main/gui.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/gui.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/gui.cpp$(DependSuffix): gui.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/gui.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/gui.cpp$(DependSuffix) -MM gui.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/tsn/Moe/Projects/CodeLiteProjects/CodeLite_wxWidgets_Div2_demo/gui.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/gui.cpp$(ObjectSuffix) $(IncludePath)
+
 $(IntermediateDirectory)/gui.cpp$(PreprocessSuffix): gui.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/gui.cpp$(PreprocessSuffix) gui.cpp
 
-$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/tsn/Moe/Projects/CodeLiteProjects/CodeLite_wxWidgets_Div2_demo/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+$(IntermediateDirectory)/controls.cpp$(ObjectSuffix): controls.cpp $(IntermediateDirectory)/controls.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/tsn/Moe/Projects/CodeLiteProjects/CodeLite_wxWidgets_Div2_demo-main/controls.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/controls.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/controls.cpp$(DependSuffix): controls.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/controls.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/controls.cpp$(DependSuffix) -MM controls.cpp
+
+$(IntermediateDirectory)/controls.cpp$(PreprocessSuffix): controls.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/controls.cpp$(PreprocessSuffix) controls.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
